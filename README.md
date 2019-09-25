@@ -1,6 +1,6 @@
 # FloatingTextField
  
-FloatingTextField is the simplest way to use custom textField with an animation placeholder. You can use Secure textField and set the Left & Right image also, Easily handle image left/right-click action.
+FloatingTextField is the simplest way to use custom textField with an animation placeholder. You can use Secure textField and also can set the Left & Right image, Easily handle image left/right-click action too.
 
 ### FloatingTextField
 ![image](/Media/FloatingTextField.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![image](/Media/FloatingTextField.gif)
