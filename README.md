@@ -10,6 +10,7 @@ FloatingTextField is the simplest way to use custom textField with an animation 
 * Simple implementation 
 * Set your own custom styles
 * User as Secure Textfield 
+* Easily can set all properties from file inspector
 
 # Usage
 
