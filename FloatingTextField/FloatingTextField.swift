@@ -5,7 +5,7 @@ let CScreenWidth = UIScreen.main.bounds.size.width
 let AnimationDuration = 0.3
 let LeftPadding: CGFloat = 15.0
 
-@objc protocol FloatingTextFieldDelegate:class {
+ @objc protocol FloatingTextFieldDelegate: AnyObject {
     @objc optional func floatingTextField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
     @objc optional func floatingTextFieldDidChange(_ textField : UITextField)
     @objc optional func floatingTextFieldDidBeginEditing(_ textField: UITextField)
@@ -87,6 +87,7 @@ class FloatingTextField: UITextField, UITextFieldDelegate {
             if self.ShowRightView {
                 self.rightViewSetup()
                 
+                
                 self.padding = UIEdgeInsets(
                     top: 0,
                     left: LeftPadding,
@@ -116,6 +117,35 @@ class FloatingTextField: UITextField, UITextFieldDelegate {
         
     }
 }
+ 
+ //MARK:- ----------- ChangeLeftView FrameRect
+ extension FloatingTextField {
+    override func leftViewRect(forBounds bounds: CGRect) -> CGRect {
+        if ShowLeftView {
+            if let rect = self.leftView?.frame
+            {
+                return rect
+            }
+        }
+        return CGRect()
+    }
+ }
+ 
+ //MARK:- ----------- ChangeRightView FrameRect
+ extension FloatingTextField {
+   
+    override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
+        
+        if ShowRightView {
+            if let rect = self.rightView?.frame
+            {
+                return CGRect(origin: CGPoint(x: self.frame.width - 42, y: 0), size: rect.size)
+            }
+        }
+        return CGRect()
+    }
+ }
+
 
 // MARK:- --------TextField Inset
 
